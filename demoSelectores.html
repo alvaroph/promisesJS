@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <li class="lista" id="1">Elemento 1</li>
+    <li class="lista" id="2">Elemento 2</li>
+    <li class="lista" id="3">Elemento 3</li>
+    <li class="lista" id="4">Elemento 4</li>
+    <li class="" id="5">Elemento 5</li>
+    <li class="" id="6">Elemento 6</li>
+    <li class="lista" id="7">Elemento 7</li>
+    <script>
+
+    //Fem servir un selector amb sintaxi CSS. Retorna una nodeList
+    const listas=document.querySelectorAll("li.lista");
+    
+    listas.forEach((l) =>{
+        l.classList.add("prueba")
+        console.log(l)
+    })
+
+    const clases = document.getElementsByClassName("prueba");
+
+    //Podem fer una recorregut amb un for. No podem fer servir forEach
+    for (let index = 0; index < clases.length; index++) {
+        const element = clases[index];
+        console.log(element) 
+    }
+
+    //Manera de como pasar de una pseudoArray a un Array I
+    [...clases].forEach(element => {
+        console.log("es6",element)
+    });
+
+    //Manera de como pasar de una pseudoArray a un Array II
+    Array.from(clases).forEach(element => {
+        console.log("es62",element)
+    });
+
+
+    </script>
+</body>
+</html>
